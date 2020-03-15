@@ -2,6 +2,7 @@
 const express = require("express") // require - importar arquivo.js
 
 const server = express()
+const courses = require("./data")
 
 
 server.set("view engine", "njk") // moto de vizualização
@@ -17,7 +18,9 @@ nunjucks.configure("views", {
 
 // configura a apresentação da página
 server.get("/", function(req,res) {
-    return res.render("courses")
+
+    return res.render("courses", { items: courses })
+
 })
 
 server.get("/about", function(req,res) {

@@ -3,36 +3,20 @@
     {% block content %}
         <main>
             <h1>Principais cursos da Rocketseat</h1>
-            <div class="cards">
-                <div class="card" id="starter">
+            <section class="cards">
+
+                {% for item in items %}
+                <div class="card" id="{{item.courseName}}">
                     <div class="card_image-container">
-                        <img src="https://skylab.rocketseat.com.br/static/64c237ccff807c054339a62d53b4b402.svg" alt="imagem da logo starter">
+                        <img src="https://skylab.rocketseat.com.br/static/{{item.id}}.svg" alt="imagem do curso">
                     </div>
                     <div class="card_info">
-                        <span>Módulos: 5</span>
-                        <span class="card_price">Free</span>
+                        <span>Módulo {{item.module}}</span>
+                        <span class="card_price">{{item.price}}</span>
                     </div>
                 </div>
-                <div class="card" id="launchbase">
-                    <div class="card_image-container">
-                        <img src="https://skylab.rocketseat.com.br/static/0828532024cb46921a6b5e941f8d788d.svg" alt="imagem da logo starter">
-                    </div>
-                    <div class="card_info">
-                        <span>Módulos: 5</span>
-                        <span class="card_price">Pago</span>
-                    </div>
-                </div>
-                <div class="card" id="gostack">
-                    <div class="card_image-container">
-                        <img src="https://skylab.rocketseat.com.br/static/83a178a0653dab1d55e2ed7946465975.svg" alt="imagem da logo starter">
-                    </div>
-                    <div class="card_info">
-                        <span>Módulos: 5</span>
-                        <span class="card_price">Pago</span>
-                    </div>
-                </div>
-            </div>
-            
+                {% endfor %}
+            </section>
         </main>
 
         <div class="modal-overlay">
