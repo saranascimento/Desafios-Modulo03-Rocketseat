@@ -109,9 +109,10 @@ main .cards {
 }
 
 .card {
-    padding-top: 22px;
-    height: 250px;
     color: white;
+    padding-top: 20px;
+    display: grid;
+    cursor: pointer;
     background-color: darkslateblue;
 }
 
@@ -136,62 +137,50 @@ main .cards {
     text-align: center;
 }
 
-/*=== MODAL ===*/
-.modal-overlay {
-    background-color:rgba(0, 0, 0, 0.7);
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    top: 0;
-    opacity: 0;
-    visibility: hidden;
-    z-index: 1;
+/*=== COURSE ===*/
+
+.course {
+    margin: 0 auto;
+    max-width: 800px;
+    
 }
 
-.modal {
-    background-color: white;
-    width: 90%;
-    height: 90%;
-    margin: 5vh auto;
+.course .card {
+    margin-top: 50px;
+    cursor: initial;
+}
+
+.course .card__image-container {
     position: relative;
+    width: 100%;
+    padding-top: 62.5%;
 }
 
-.modal .close-modal, .maximize-modal {
-    color: black;
-    position: absolute;
-    right: 8px;
-    top: 8px;
+
+.course .card_description{
+    padding: 24px;
+    text-align: center;
+}
+
+.course h2{
+    color: white;
+}
+
+.course a {
+    font-weight: bold;
+    font-size: 14px;
+    color: white;
+    background-color: rgb(113, 89, 193);
+    width: 95%;
+    height: 32px;
+    border-radius: 15px;
+    margin: 16px;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
 }
-
-.modal .maximize-modal {
-    right: 40px;
-}
-
-/* MODAL.MAXIMIZE */
-
-
-.modal.maximize {
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    position: absolute;
-}
-
-/*=== MODAL.ACTIVE ===*/
-
-.modal-overlay.active {
-    opacity: 1;
-    visibility: visible;
-}
-
-iframe {
-    width: 100%;
-    height: 90%;
-    position: absolute;
-    top: 5%;
-}
-
 
 /* FOOTER */
 footer {

@@ -1,22 +1,24 @@
 {% extends "layout.njk" %}
 
     {% block content %}
-        <main>
-            <h1>Principais cursos da Rocketseat</h1>
-            <section class="cards">
-
-                {% for item in items %}
+    
+            <section class="course">
+              
                 <div class="card" id="{{item.id}}">
                     <div class="card_image-container">
-                        <img src="https://skylab.rocketseat.com.br/static/{{item.id}}.svg" alt="imagem do curso">
+                        <img src="https://skylab.rocketseat.com.br/static/{{item.id}}.svg" alt="logo do curso {{item.courseName}}">
                     </div>
+                    <div class="card_description"><h2>{{item.description}}</h2></div>
                     <div class="card_info">
                         <span class="card_modulos">Módulos: {{item.module}}</span>
                         <span class="card_price">{{item.price}}</span>
                     </div>
+                    
+                    <a href="https://rocketseat.com.br/{{item.courseName}}">Matricule-se Agora</a>
                 </div>
-                {% endfor %}
+
             </section>
-        </main>
+
+       
         
     {% endblock  %}   
